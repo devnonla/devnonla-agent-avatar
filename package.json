@@ -1,0 +1,50 @@
+{
+  "name": "devnonla-agent-avatar",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "React agent avatars for Nonla Agents",
+  "author": "devlangla <devlangla0x01@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devnonla/devnonla-agent-avatar.git"
+  },
+  "homepage": "https://devnonla.github.io/devnonla-agent-avatar/",
+  "bugs": {
+    "url": "https://github.com/devnonla/devnonla-agent-avatar/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles.css"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "docs": "cd docs && bun run dev"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "typescript": "~5.8.3"
+  }
+}
