@@ -9,6 +9,6 @@ icon: "apps-24"
 
 # Introduction
 
-Agent avatar draws the faces Nonla agents use: a shape with two eyes, an animal with a mouth, and a standing body that walks.
+`DevNonlaAvatar` is the Nonla mark. `AgentShapeAvatar` is a geometric face. `AgentAnimalAvatar` adds a mouth. `AgentBody` stands and walks.
 
 `devnonla-ui` re-exports the same components. Use this package when the page only needs the avatar.

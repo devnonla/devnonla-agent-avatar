@@ -17,7 +17,7 @@ export function DocArticle({
   children: ReactNode;
 }) {
   useEffect(() => {
-    document.title = `${title} · Agent avatar`;
+    document.title = `${title} · DevNonlaAvatar`;
   }, [title]);
 
   if (flush) {

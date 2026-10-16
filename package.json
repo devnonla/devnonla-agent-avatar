@@ -2,7 +2,7 @@
   "name": "devnonla-agent-avatar",
   "version": "0.1.0",
   "type": "module",
-  "description": "React agent avatars for Nonla Agents",
+  "description": "Give an AI agent a face. A conical hat, twelve shapes, five talking animals, and a body that walks.",
   "author": "devlangla <devlangla0x01@gmail.com>",
   "license": "MIT",
   "repository": {

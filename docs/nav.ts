@@ -5,9 +5,11 @@ export const GITHUB_REPO = "https://github.com/devnonla/devnonla-agent-avatar";
 
 /** Old hashes and `/docs/…` paths → current docs URLs. */
 export const LEGACY_ALIASES: Record<string, string> = {
-  "chat/avatar": "/avatar",
-  "chat-avatar": "/avatar",
-  avatar: "/avatar",
+  "chat/avatar": "/shape-avatar",
+  "chat-avatar": "/shape-avatar",
+  avatar: "/shape-avatar",
+  "shape-avatar": "/shape-avatar",
+  "devnonla-avatar": "/devnonla-avatar",
   "chat/animal-avatar": "/animal-avatar",
   "animal-avatar": "/animal-avatar",
   "chat/agent-body": "/agent-body",

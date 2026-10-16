@@ -12,7 +12,7 @@ export function DocsLayout() {
     <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
       <header className="flex h-12 shrink-0 items-center justify-between border-b border-border px-4">
         <Link to="/introduction" className="text-sm font-semibold text-foreground no-underline">
-          Agent avatar
+          DevNonlaAvatar
         </Link>
         <div className="flex items-center gap-1">
           <ThemeSwitcher />

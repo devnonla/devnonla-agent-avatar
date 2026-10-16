@@ -15,8 +15,9 @@ Published: https://devnonla.github.io/devnonla-agent-avatar/
 | `/` | Redirects to `/introduction` |
 | `/introduction` | Get started |
 | `/installation` | Install |
-| `/avatar` | Agent avatar |
-| `/animal-avatar` | Animal avatar |
+| `/devnonla-avatar` | DevNonlaAvatar |
+| `/shape-avatar` | AgentShapeAvatar |
+| `/animal-avatar` | AgentAnimalAvatar |
 | `/agent-body` | Agent body |
 
 Old hashes (`#/chat/avatar`, `#/agent-body`) and `/docs/…` redirect to the current paths.

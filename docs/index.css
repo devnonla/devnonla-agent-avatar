@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "devnonla-ui/styles.css";
-@import "devnonla-agent-avatar/styles.css";
 @source "../src";
 @source "./node_modules/devnonla-ui/src";
 @source "./**/*.tsx";

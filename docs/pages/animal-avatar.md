@@ -1,15 +1,15 @@
 ---
 path: "/animal-avatar"
-title: "Animal avatar"
+title: "AgentAnimalAvatar"
 group: "Avatars"
 groupOrder: 2
 order: 2
 icon: "people-community-24"
 ---
 
-# Animal avatar
+# AgentAnimalAvatar
 
-`frog`, `fox`, `owl`, `bunny`, and `koala`. Two eyes and a mouth. Shapes on [Avatar](/avatar) stay eyes only. For a standing character, pass any of these as the head of [Agent body](/agent-body).
+`frog`, `fox`, `owl`, `bunny`, and `koala`. Two eyes and a mouth. Shapes on [AgentShapeAvatar](/shape-avatar) stay eyes only. The logo is [DevNonlaAvatar](/devnonla-avatar). For a standing character, pass any of these as the head of [Agent body](/agent-body).
 
 ## Basic
 

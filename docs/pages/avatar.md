@@ -1,39 +1,39 @@
 ---
-path: "/avatar"
-title: "Avatar"
+path: "/shape-avatar"
+title: "AgentShapeAvatar"
 group: "Avatars"
 groupOrder: 2
 order: 1
 icon: "bot-24"
 ---
 
-# Agent avatar
+# AgentShapeAvatar
 
-Face on the welcome screen. Pass it as `avatar` on AgentPanel, AgentChatbox, or ChatWelcome. A flat shape and two eyes. Animals with a mouth are [Animal avatar](/animal-avatar). For a standing character with legs, use [Agent body](/agent-body).
+A flat shape and two eyes. The Nonla mark is [DevNonlaAvatar](/devnonla-avatar). Animals with a mouth are [AgentAnimalAvatar](/animal-avatar). For a standing character with legs, use [Agent body](/agent-body).
 
 ## Basic
 
 Set the shape and the color.
 
 ```live-react
-import { AgentAvatar } from "devnonla-agent-avatar";
+import { AgentShapeAvatar } from "devnonla-agent-avatar";
 
 export default function Demo() {
-  return <AgentAvatar config={{ shape: "drop", color: "#6E56F0" }} />;
+  return <AgentShapeAvatar config={{ shape: "drop", color: "#6E56F0" }} />;
 }
 ```
 
 ## Shape
 
-Thirteen silhouettes. The color stays the same so the shape is the only change. `nonla` is the logo mark. Animals with a mouth are [Animal avatar](/animal-avatar).
+Twelve silhouettes. The color stays the same so the shape is the only change. Animals with a mouth are [AgentAnimalAvatar](/animal-avatar).
 
 ```live-react
-import { AGENT_AVATAR_PARTS, AgentAvatar } from "devnonla-agent-avatar";
+import { AGENT_SHAPE_PARTS, AgentShapeAvatar } from "devnonla-agent-avatar";
 
 export default function Demo() {
-  return AGENT_AVATAR_PARTS.shape.map((shape) => (
+  return AGENT_SHAPE_PARTS.shape.map((shape) => (
     <div key={shape} className="flex w-16 flex-col items-center gap-1">
-      <AgentAvatar config={{ shape, color: "#6E56F0" }} label={shape} />
+      <AgentShapeAvatar config={{ shape, color: "#6E56F0" }} label={shape} />
       <span className="text-center text-[15px] leading-7 text-muted-foreground capitalize">{shape}</span>
     </div>
   ));
@@ -45,7 +45,7 @@ export default function Demo() {
 `still` is the default and holds the pose. `idle` bobs the body (soft rise and squash), blinks, and glances to a random direction.
 
 ```live-react
-import { AgentAvatar } from "devnonla-agent-avatar";
+import { AgentShapeAvatar } from "devnonla-agent-avatar";
 
 const face = { shape: "nonla", color: "#ffa333" };
 
@@ -53,11 +53,11 @@ export default function Demo() {
   return (
     <>
       <div className="flex flex-col items-center gap-1">
-        <AgentAvatar config={face} size={80} motion="still" />
+        <AgentShapeAvatar config={face} size={80} motion="still" />
         <span className="text-[15px] leading-7 text-muted-foreground">still</span>
       </div>
       <div className="flex flex-col items-center gap-1">
-        <AgentAvatar config={face} size={80} motion="idle" />
+        <AgentShapeAvatar config={face} size={80} motion="idle" />
         <span className="text-[15px] leading-7 text-muted-foreground">idle</span>
       </div>
     </>
@@ -70,7 +70,7 @@ export default function Demo() {
 Facing is fixed. The shape stays centered. The eyes travel that way.
 
 ```live-react
-import { AgentAvatar } from "devnonla-agent-avatar";
+import { AgentShapeAvatar } from "devnonla-agent-avatar";
 
 const looks = [
   ["forward", "Forward"],
@@ -86,35 +86,7 @@ const looks = [
 export default function Demo() {
   return looks.map(([look, label]) => (
     <div key={look} className="flex w-20 flex-col items-center gap-1">
-      <AgentAvatar config={{ shape: "drop", color: "#6E56F0" }} look={look} label={label} />
-      <span className="text-center text-[15px] leading-7 text-muted-foreground">{label}</span>
-    </div>
-  ));
-}
-```
-
-## Nonla
-
-The logo mark, as a face. The mark stays centered. The eyes travel that way.
-
-```live-react
-import { AgentAvatar } from "devnonla-agent-avatar";
-
-const looks = [
-  ["forward", "Forward"],
-  ["left", "Left"],
-  ["right", "Right"],
-  ["down", "Down"],
-  ["up-left", "Top left"],
-  ["up-right", "Top right"],
-  ["down-left", "Bottom left"],
-  ["down-right", "Bottom right"],
-];
-
-export default function Demo() {
-  return looks.map(([look, label]) => (
-    <div key={look} className="flex w-20 flex-col items-center gap-1">
-      <AgentAvatar config={{ shape: "nonla", color: "#ffa333" }} size={80} look={look} label={label} />
+      <AgentShapeAvatar config={{ shape: "drop", color: "#6E56F0" }} look={look} label={label} />
       <span className="text-center text-[15px] leading-7 text-muted-foreground">{label}</span>
     </div>
   ));
@@ -128,7 +100,7 @@ Pick a shape, a face color, and a pupil color. All three go in `config`.
 ```live-react
 import { useState } from "react";
 import { Segmented } from "devnonla-ui";
-import { AGENT_AVATAR_PARTS, AgentAvatar } from "devnonla-agent-avatar";
+import { AGENT_SHAPE_PARTS, AgentShapeAvatar } from "devnonla-agent-avatar";
 
 const motions = [
   { label: "Still", value: "still" },
@@ -158,12 +130,12 @@ export default function Demo() {
 
   return (
     <div className="flex w-full flex-col items-center gap-5">
-      <AgentAvatar config={config} size={120} motion={motion} look={look} label="Configured agent" />
+      <AgentShapeAvatar config={config} size={120} motion={motion} look={look} label="Configured agent" />
       <Segmented value={motion} onChange={setMotion} options={motions} size="small" />
       <Segmented value={look} onChange={setLook} options={looks} size="small" />
       <Segmented value={config.eyeColor} onChange={(eyeColor) => setConfig((current) => ({ ...current, eyeColor }))} options={eyeColors} size="small" />
       <div className="mx-auto flex w-100 flex-wrap justify-center">
-        {AGENT_AVATAR_PARTS.shape.map((shape) => (
+        {AGENT_SHAPE_PARTS.shape.map((shape) => (
           <button
             key={shape}
             type="button"
@@ -172,14 +144,14 @@ export default function Demo() {
             onClick={() => setConfig((current) => ({ ...current, shape }))}
           >
             <span className="rounded-2xl" style={config.shape === shape ? { boxShadow: "0 0 0 2px var(--card), 0 0 0 4px var(--foreground)" } : undefined}>
-              <AgentAvatar config={{ shape, color: config.color, eyeColor: config.eyeColor }} size={64} motion="still" look={look} label={shape} />
+              <AgentShapeAvatar config={{ shape, color: config.color, eyeColor: config.eyeColor }} size={64} motion="still" look={look} label={shape} />
             </span>
             <span className="text-[15px] leading-7 text-muted-foreground capitalize">{shape}</span>
           </button>
         ))}
       </div>
       <div className="flex flex-wrap justify-center gap-2">
-        {AGENT_AVATAR_PARTS.color.map((color) => (
+        {AGENT_SHAPE_PARTS.color.map((color) => (
           <button
             key={color}
             type="button"
@@ -204,13 +176,13 @@ export default function Demo() {
 `size` is the width and height in pixels.
 
 ```live-react
-import { AgentAvatar } from "devnonla-agent-avatar";
+import { AgentShapeAvatar } from "devnonla-agent-avatar";
 
 export default function Demo() {
   const face = { shape: "drop", color: "#6E56F0" };
   return [24, 32, 48, 64, 96].map((size) => (
     <div key={size} className="flex flex-col items-center gap-1">
-      <AgentAvatar config={face} size={size} />
+      <AgentShapeAvatar config={face} size={size} />
       <span className="text-[15px] leading-7 text-muted-foreground">{size}</span>
     </div>
   ));
@@ -223,7 +195,7 @@ Pass shape, color, and eye color together: `config={{ shape, color, eyeColor }}`
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| `config.shape` | Silhouette of the face. `nonla` is the logo mark: one color splits into brim, face, and hat. | `circle` \| `square` \| `triangle` \| `diamond` \| `hex` \| `gem` \| `pill` \| `arch` \| `cloud` \| `blob` \| `drop` \| `shield` \| `nonla` | `circle` |
+| `config.shape` | Silhouette of the face. The Nonla mark is `DevNonlaAvatar`. | `circle` \| `square` \| `triangle` \| `diamond` \| `hex` \| `gem` \| `pill` \| `arch` \| `cloud` \| `blob` \| `drop` \| `shield` | `circle` |
 | `config.color` | Face color, as a hex string. | `string` | `#6E56F0` |
 | `config.eyeColor` | Pupil color. Omitted uses black, or white when the face is dark. | `black` \| `white` | black, or white on a dark face |
 | `size` | Width and height, in pixels. | `number` | `64` |

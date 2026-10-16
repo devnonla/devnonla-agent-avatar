@@ -9,7 +9,7 @@ icon: "person-24"
 
 # Agent body
 
-Full standing character: an `AgentAvatar` head (including `nonla`) on a neck and a cylinder torso, with two arms and two legs that walk.
+Full standing character: a `DevNonlaAvatar` or `AgentShapeAvatar` head on a neck and a cylinder torso, with two arms and two legs that walk.
 
 ## 2D Walk (WASD / Arrow keys)
 
@@ -429,7 +429,7 @@ export default function Demo() {
 
 ## Shape
 
-Every `AgentAvatar` head, plus the animal heads, sits on the same torso, arms, and legs.
+Every `AgentShapeAvatar` head, the Nonla mark, and the animal heads sit on the same torso, arms, and legs.
 
 ```live-react
 import { AGENT_BODY_PARTS, AgentBody } from "devnonla-agent-avatar";
@@ -448,7 +448,7 @@ export default function Demo() {
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| `config.shape` | Head silhouette. The `AgentAvatar` shapes, plus `frog` \| `fox` \| `owl` \| `bunny` \| `koala`. `nonla` is the logo mark. | `circle` \| `square` \| `triangle` \| `diamond` \| `hex` \| `gem` \| `pill` \| `arch` \| `cloud` \| `blob` \| `drop` \| `shield` \| `nonla` \| `frog` \| `fox` \| `owl` \| `bunny` \| `koala` | `nonla` |
+| `config.shape` | Head silhouette. `nonla` is `DevNonlaAvatar`. The rest are `AgentShapeAvatar` and `AgentAnimalAvatar`. | `nonla` \| `circle` \| `square` \| `triangle` \| `diamond` \| `hex` \| `gem` \| `pill` \| `arch` \| `cloud` \| `blob` \| `drop` \| `shield` \| `frog` \| `fox` \| `owl` \| `bunny` \| `koala` | `nonla` |
 | `config.color` | Character color, as a hex string. | `string` | `#F47820` |
 | `config.eyeColor` | Pupil color. Omitted uses black, or white when the face is dark. | `black` \| `white` | black, or white on a dark face |
 | `size` | Width in pixels. Height follows the standing viewBox (`80 × 104`). | `number` | `80` |
