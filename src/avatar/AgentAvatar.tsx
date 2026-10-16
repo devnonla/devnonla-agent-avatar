@@ -1,5 +1,6 @@
 import { createContext, type ReactNode, useContext, useEffect, useId, useState } from "react";
 import { cn } from "../cn";
+import "./avatar.css";
 import { BunnyMouth, FoxMouth, FrogMouth, KoalaMouth, OwlMouth } from "./AvatarMouth";
 
 /** `still` holds the pose. `idle` bobs the body, blinks, and glances. Defaults to `still`. */
@@ -11,10 +12,13 @@ export type AgentAvatarLook = "forward" | "left" | "right" | "down" | "up-left" 
 /** Pupil color. Omitted picks black, or white when the face is dark. */
 export type AgentAvatarEyeColor = "black" | "white";
 
-export const AGENT_AVATAR_PARTS = {
-  shape: ["circle", "square", "triangle", "diamond", "hex", "gem", "pill", "arch", "cloud", "blob", "drop", "shield", "nonla"],
+export const AGENT_SHAPE_PARTS = {
+  shape: ["circle", "square", "triangle", "diamond", "hex", "gem", "pill", "arch", "cloud", "blob", "drop", "shield"],
   color: ["#6E56F0", "#1C1C1C", "#F0B429", "#3DCFC0", "#F47820", "#3B82F6", "#F2549B", "#A56B3C"],
 } as const;
+
+/** @deprecated Use `AGENT_SHAPE_PARTS`. */
+export const AGENT_AVATAR_PARTS = AGENT_SHAPE_PARTS;
 
 /** Animal faces. These are the ones with a mouth. See `AgentAnimalAvatar`. */
 export const AGENT_ANIMAL_PARTS = {
@@ -24,9 +28,9 @@ export const AGENT_ANIMAL_PARTS = {
 
 export type AgentAnimalShape = (typeof AGENT_ANIMAL_PARTS.shape)[number];
 
-/** A drawn face: an avatar shape, or an animal. */
+/** A drawn face: a geometric shape, the Nonla mark, or an animal. */
 export type AvatarFaceConfig = {
-  shape: AgentAvatarConfig["shape"] | AgentAnimalShape;
+  shape: AgentAvatarConfig["shape"] | "nonla" | AgentAnimalShape;
   color: string;
   eyeColor?: AgentAvatarEyeColor;
 };
@@ -545,6 +549,12 @@ export function AvatarFace({
   );
 }
 
-export function AgentAvatar({ config, size, motion = "still", look = "forward", className, label = "Agent" }: AgentAvatarProps) {
+export function AgentShapeAvatar({ config, size, motion = "still", look = "forward", className, label = "Agent" }: AgentAvatarProps) {
   return <AvatarFace config={resolveConfig(config)} size={size} motion={motion} look={look} className={className} label={label} />;
 }
+
+/** @deprecated Use `AgentShapeAvatar`. */
+export const AgentAvatar = AgentShapeAvatar;
+
+export type AgentShapeAvatarConfig = AgentAvatarConfig;
+export type AgentShapeAvatarProps = AgentAvatarProps;

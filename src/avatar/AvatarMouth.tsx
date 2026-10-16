@@ -1,4 +1,5 @@
 import { cn } from "../cn";
+import "./avatar.css";
 
 export type AvatarMouthProps = {
   /** Center of the smile, in the 64-unit avatar box. */

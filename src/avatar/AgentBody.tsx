@@ -1,9 +1,9 @@
 import { useEffect, useId, useState } from "react";
 import { cn } from "../cn";
+import "./avatar.css";
 import {
   AGENT_ANIMAL_PARTS,
   AGENT_AVATAR_PARTS,
-  type AgentAvatarConfig,
   type AgentAvatarEyeColor,
   type AgentAvatarLook,
   type AvatarFaceConfig,
@@ -159,9 +159,9 @@ function useDialogue(text: string | undefined, maxChars: number, msPerChar = 32)
   return { shown, typing, hasMore: hasMore && !typing };
 }
 
-/** Avatar shapes plus the animals. Animals keep the mouth. */
+/** Nonla mark, geometric shapes, and the animals. Animals keep the mouth. */
 export const AGENT_BODY_PARTS = {
-  shape: [...AGENT_AVATAR_PARTS.shape, ...AGENT_ANIMAL_PARTS.shape],
+  shape: ["nonla", ...AGENT_AVATAR_PARTS.shape, ...AGENT_ANIMAL_PARTS.shape],
   color: AGENT_AVATAR_PARTS.color,
 } as const;
 
@@ -194,7 +194,7 @@ export type AgentBodyProps = {
   label?: string;
 };
 
-const DEFAULT_BODY_CONFIG: AgentAvatarConfig = {
+const DEFAULT_BODY_CONFIG: AvatarFaceConfig = {
   shape: "nonla",
   color: "#F47820",
 };

@@ -1,3 +1,4 @@
+import "./avatar.css";
 import {
   AGENT_ANIMAL_PARTS,
   type AgentAnimalShape,
